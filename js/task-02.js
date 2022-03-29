@@ -20,4 +20,4 @@ const elements = ingredients.map(ingredient => {
   return listEl;
 })
 
-list.append(...elements)ж
+list.append(...elements);
