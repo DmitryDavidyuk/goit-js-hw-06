@@ -1,18 +1,14 @@
 //Получаем ссылку на список
 const categoriesEll = document.querySelector('#categories');
+const itemEl = [...categoriesEll.querySelectorAll('.item')];
 
-//Получаем длину всех элементов списка - тоесть его предков li
-const ellLength = categoriesEll.children.length;
 
-//и выводим в консоль через шаблонною строку
-console.log(`Number of categories: ${ellLength}`);
+console.log(`Number of categories: ${itemEl.length}\n `);
 
-//Получаем ссылки на елементы
-const titlesEl = document.querySelectorAll('.item h2');
-const itemlEl = document.querySelectorAll('.item ul');
+itemEl.forEach(item => {
+    const title = item.querySelector('h2').textContent;
+    const length = item.querySelectorAll('li').length;
 
-//Перебираем через итерацию и на каждой итерации выводим в консоль
-for (let i = 0; i < ellLength; i += 1) {
-    console.log(`Category: ${titlesEl[i].textContent}`);
-    console.log(`Category: ${itemlEl[i].children.length}`);
-}
+    console.log(`Category: ${title}`);
+    console.log(`Category: ${length}\n `);
+})
